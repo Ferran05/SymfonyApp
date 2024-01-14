@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    <title>Llista de Proveedores</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Proveedores</h1>
+        <a href="{{ path('createProveedor') }}" class="btn btn-secondary btn-margin">Registrar</a>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                    <th>Tipo de Proveedor</th>
+                    <th>Fecha de Registro</th>
+                    <th>Fecha de Modificacion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prov in listProveedores %}
+                        <tr {% if prov.activo == 0 %}class="table-danger"{% endif %}>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ prov.nombre }}</td>
+                            <td>{{ prov.correoElectronico }}</td>
+                            <td>{{ prov.telefono }}</td>
+                            <td>{{ prov.tipoProveedor }}</td>
+                            <td>{{ prov.fechaRegistro|date('Y-m-d') }}</td>
+                            <td>{{ prov.fechaMod|date('Y-m-d') }}</td>
+                            {% if prov.activo %}
+                            <td>
+                                <a href="{{ path('updateProveedor', {'id': prov.id}) }}" class="btn btn-dark btn-margin">Modificar</a>
+                                <a href="{{ path('deleteProveedor', {'id': prov.id}) }}" class="btn btn-danger btn-margin">Eliminar</a>
+                            </td>
+                            {% endif %}
+                            {% if prov.activo == 0%}
+                            <td>
+                                <a href="{{ path('returnProveedor', {'id': prov.id}) }}" class="btn btn-warning btn-margin">Recuperar</a>
+                            </td>
+                            {% endif %}
+                        </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+
+getProveedores:
+    path: /proveedores
+    controller: App\Controller\UserController::getProveedores
+
+createProveedor:
+    path: /proveedores/create
+    controller: App\Controller\UserController::createProveedor
+
+updateProveedor:
+    path: /proveedores/update/{id}
+    controller: App\Controller\UserController::updateProveedor
+
+deleteProveedor:
+    path: /proveedores/delete/{id}
+    controller: App\Controller\UserController::deleteProveedor
+
+returnProveedor:
+    path: /proveedores/return/{id}
+    controller: App\Controller\UserController::returnProveedor

@@ -1,0 +1,27 @@
+{% extends ('base.html.twig') %}
+
+{% block title %}
+    <title>Registrar de Proveedores</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Registro</h1>
+    {{ form_start(form_prove)}}
+    <div class="form-group col-lg-4">
+        {{form_row(form_prove.nombre)}}
+    </div>
+    <div class="form-group col-lg-4">
+        {{form_row(form_prove.correoElectronico)}}
+    </div>
+    <div class="form-group col-lg-4">
+        {{form_row(form_prove.telefono)}}
+    </div>
+    <div class="form-group col-lg-4">
+        {{form_row(form_prove.tipoProveedor)}}
+    </div>
+    <div class="form-group col-lg-4">
+        {{form_widget(form_prove.submit)}}
+    </div>
+    <a href="{{ path('getProveedores') }}" class="btn btn-secondary">Cancelar</a>
+    {{ form_end(form_prove)}}
+{% endblock %}
