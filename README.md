@@ -33,9 +33,9 @@ En la carpeta de la aplicación, encontrarás la base de datos necesaria `dades_
 ### Paso 4: Configurar el Archivo .env
 Después de tener la base de datos creada, modifica la información de esta línea de código en la carpeta `.env` según tu base de datos:
 ```bash
-    DATABASE_URL="mysql://usuario:contraseña@127.0.0.1:3306/basededatos?serverVersion=8.0.32&charset=utf8mb4"
+    DATABASE_URL="mysql://usuario:contraseña@127.0.0.1:3306/dades_symfony?serverVersion=8.0.32&charset=utf8mb4"
 ```
-   Asegúrate de cambiar "usuario", "contraseña" y "basededatos"
+   Asegúrate de cambiar "usuario", "contraseña"
 
 
 
