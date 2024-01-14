@@ -37,7 +37,7 @@ Después de tener la base de datos creada, modifica la información de esta lín
 ```
    Asegúrate de cambiar "usuario", "contraseña"
 
-###Listo!
+### ¡Listo!
 Con estos pasos, has instalado correctamente SymfonyApp en tu entorno local. Puedes acceder a la aplicación a través de tu navegador.
 
 
